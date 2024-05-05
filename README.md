@@ -14,4 +14,6 @@ blender/4.0/python/bin/python3.11 pip install PySide6
 1. Download this repository as a zip file
 2. [Install Zip as Blender Add-On](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html#installing-add-ons)
 3. Navigate to the 3DView > Sidebar > QT UI Demo
-4. Run the `Show QT UI` Operator 
+4. Run the `Show QT UI` Operator
+
+![image](https://github.com/NickTiny/blender_qt_ui_demo/assets/86638335/1b92278d-dfd8-4151-9fc8-89224c3d2624)
