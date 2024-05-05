@@ -1,6 +1,6 @@
 # Blender QT User Interface Demo
 
-Example implementation of a [QT]https://doc.qt.io/qtforpython-6/) Interface within a [Blender Add-On](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html) using [PySide6](https://pypi.org/project/PySide6/). 
+Example implementation of a [QT](https://doc.qt.io/qtforpython-6/) Interface within a [Blender Add-On](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html) using [PySide6](https://pypi.org/project/PySide6/). 
 
 ## Prerequisites
 - PySide6 is required to be installed in Blender's Python environment.
