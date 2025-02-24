@@ -12,40 +12,29 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from PySide6.QtWidgets import (
-    QWidget,
     QPushButton,
-    QVBoxLayout,
-    QHBoxLayout,
-    QLabel,
-    QLineEdit,
+    QDialog,
 )
-from PySide6.QtGui import QIcon
 
 
-class Widget(QWidget):
-    """A custom QT main window using PySide6 shows an example of a user interface."""
-
-    def __init__(self):
+class Ui_ShowGroupWidget(QDialog):
+    def __init__(self, callback):
         super().__init__()
-        self.setWindowTitle("Custom Main Window")
-        self.setWindowIcon(QIcon.fromTheme("applications-development"))
+        self.setupUi()
+        self.roiGroups = {}
+        # self.data = data
+        self.submit_fn = callback
+        self.Submit.clicked.connect(self.submitclose)
 
-        label = QLabel("Text: ")
-        self.line_edit = QLineEdit()
+    def setupUi(self):
+        # sets up Submit button
+        self.Submit = QPushButton("Submit", self)
 
-        h_layout = QHBoxLayout()
-        h_layout.addWidget(label)
-        h_layout.addWidget(self.line_edit)
-
-        button = QPushButton("Print to Console")
-        button.clicked.connect(self.button_clicked)
-
-        v_layout = QVBoxLayout()
-        v_layout.addLayout(h_layout)
-        v_layout.addWidget(button)
-
-        self.setLayout(v_layout)
-
-    def button_clicked(self):
-        """Prints the text entered in the line edit widget to the console."""
-        print(self.line_edit.text())
+    def submitclose(self):
+        # do whatever you need with self.roiGroups
+        try:
+            data = {"keys": "values"}
+            self.submit_fn(data)
+        except:
+            raise
+        self.accept()

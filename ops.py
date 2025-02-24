@@ -14,7 +14,7 @@
 import bpy
 from bpy.types import Operator, Timer
 from PySide6.QtWidgets import QApplication
-from .widget import Widget
+from .widget import Widget, Ui_ShowGroupWidget
 
 
 class QTDEMO_OT_show_ui(Operator):
@@ -49,8 +49,7 @@ class QTDEMO_OT_show_ui(Operator):
         if not self._app:
             self._app = QApplication()
 
-        # Show QT Widget
-        self._widget = Widget()
+        self._widget = Ui_ShowGroupWidget(print_me)
         self._widget.show()
 
         # Timer controls when modal() function is called
@@ -58,6 +57,10 @@ class QTDEMO_OT_show_ui(Operator):
         self._timer = wm.event_timer_add(0.05, window=context.window)
         wm.modal_handler_add(self)
         return {'RUNNING_MODAL'}
+
+
+def print_me(data):
+    print(data)
 
 
 def register():
