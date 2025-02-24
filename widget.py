@@ -46,7 +46,6 @@ class Widget(QWidget):
 
         self.setLayout(v_layout)
 
-
-def button_clicked(self):
-    """Prints the text entered in the line edit widget to the console."""
-    print(self.line_edit.text())
+    def button_clicked(self):
+        """Prints the text entered in the line edit widget to the console."""
+        print(self.line_edit.text())
